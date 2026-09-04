@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FAF7F5;
+  --foreground: #4A121A;
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-outfit: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background-color: #FAF7F5;
+  color: #4A121A;
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar in Luxury Rose / Cream */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(250, 247, 245, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(183, 110, 96, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(163, 93, 103, 0.6);
+}
+
+/* Glassmorphic Utilities */
+.glass-panel {
+  background: rgba(255, 250, 248, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(183, 110, 96, 0.18);
+  box-shadow: 0 10px 30px -5px rgba(74, 18, 26, 0.05), 0 4px 12px -2px rgba(183, 110, 96, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 252, 251, 0.88);
+  border-color: rgba(183, 110, 96, 0.32);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -6px rgba(74, 18, 26, 0.08), 0 6px 16px -2px rgba(183, 110, 96, 0.12);
+}
+
+.glass-card-subtle {
+  background: rgba(253, 242, 241, 0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(235, 220, 215, 0.6);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(183, 110, 96, 0.22);
+  color: #4A121A;
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #A35D67;
+  box-shadow: 0 0 0 3px rgba(183, 110, 96, 0.15);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
